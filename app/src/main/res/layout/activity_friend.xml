@@ -71,7 +71,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/m1_button"
-        android:layout_alignEnd="@+id/m2_button" />
+        android:layout_alignEnd="@+id/m2_button"
+        android:src="@drawable/PQ_P4_HERO" />
 
     <TextView
         android:layout_width="wrap_content"
