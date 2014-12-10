@@ -13,17 +13,20 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnItemClick;
 
 
 public class MainActivity extends Activity {
-    @InjectView(R.id.listView)
-    ListView mListView;
+    @InjectView(R.id.friend_list)
+    ListView mFriendList;
+    ArrayList<User> users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,23 +36,20 @@ public class MainActivity extends Activity {
 
 
         //ListView setup
-        ArrayList<User> users = new ArrayList<User>();
+        users = new ArrayList<User>();
+
         User u1 = new User();
-        //u1.icon = Drawable.createFromPath("@drawable/ic_launcher.png");
         u1.name = "YUJI";
         u1.cigarCount = "20";
         users.add(u1);
 
         User u2 = new User();
-        //u1.icon = Drawable.createFromPath("@drawable/ic_launcher.png");
         u2.name = "Haru";
         u2.cigarCount = "21";
         users.add(u2);
 
         TestListAdapter testListAdapter = new TestListAdapter(this, R.layout.item, users);
-        mListView.setAdapter(testListAdapter);
-        //ListView
-
+        mFriendList.setAdapter(testListAdapter);
     }
 
 
@@ -73,6 +73,14 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    @OnItemClick(R.id.friend_list)
+    public void friendClick(int position) {
+        User user = (User) mFriendList.getItemAtPosition(position);
+        Toast.makeText(this, user.name, Toast.LENGTH_SHORT).show();
+
     }
 
     public class User {
