@@ -49,22 +49,27 @@ public class FriendActvity extends Activity {
 
     }
 
+    //いいね
     @OnClick(R.id.m1_button)
     public void M1_Button() {
         // TODO submit data to server...
+
     }
 
+    //ダメね
     @OnClick(R.id.m2_button)
     public void M2_Button() {
         // TODO submit data to server...
+
     }
 
+    //最低！
     @OnClick(R.id.m3_button)
     public void M3_Button() {
         // TODO submit data to server...
+
     }
 
-    //aaa
 
 
     @Override
@@ -86,6 +91,4 @@ public class FriendActvity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }

@@ -33,6 +33,8 @@ public class RankingActivity extends Activity {
         setContentView(R.layout.activity_ranking);
         ButterKnife.inject(this);
 
+
+        //Setup Ranking
         ArrayList<RankingUser> rank = new ArrayList<RankingUser>();
         RankingUser ru1 = new RankingUser();
         ru1.rankusername = "YUJI";
@@ -49,12 +51,14 @@ public class RankingActivity extends Activity {
         //ListView
     }
 
+    //Ranking Item
     public class RankingUser {
         public Drawable userImageView;
         public String rankusername;
         public String rankscore;
     }
 
+    //Adapter of Ranking ListView
     public static class RankListAdapter extends ArrayAdapter<RankingUser> {
 
         Context mContext;
@@ -79,11 +83,9 @@ public class RankingActivity extends Activity {
 
             RankingUser rankitem = this.getItem(position);
 
-//            holder.mIcon.setImageDrawable(item.icon);
+            //           holder.mIcon.setImageDrawable(item.icon);
             holder.mRankusername.setText(rankitem.rankusername);
             holder.mRankscore.setText(rankitem.rankscore);
-
-            // etc...
 
             return convertView;
         }
