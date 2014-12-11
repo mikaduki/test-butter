@@ -2,6 +2,7 @@ package com.androidapp.yuki.test_butter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -79,10 +80,17 @@ public class MainActivity extends Activity {
     @OnItemClick(R.id.friend_list)
     public void friendClick(int position) {
         User user = (User) mFriendList.getItemAtPosition(position);
+        Intent intent = new Intent(this, FriendActvity.class);
+        startActivity(intent);
         Toast.makeText(this, user.name, Toast.LENGTH_SHORT).show();
-
+        //ChangeShow();
     }
 
+
+    /*private void ChangeShow() {
+        Intent intent = new Intent(this, FriendActvity.class);
+        startActivity(intent);
+    }*/
     public class User {
         public Drawable icon;
         public String name;
