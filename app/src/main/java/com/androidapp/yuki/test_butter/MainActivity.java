@@ -23,7 +23,6 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnItemClick;
 
-
 public class MainActivity extends Activity {
     @InjectView(R.id.friend_list)
     ListView mFriendList;

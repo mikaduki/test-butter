@@ -42,10 +42,10 @@ public class FriendActvity extends Activity {
         setContentView(R.layout.activity_friend);
         ButterKnife.inject(this);
 
-        mFriendName.setText("YUJINAKANISHI");
+        mFriendName.setText("YUJI NAKANISHI");
         mFriendBirthday.setText("10/10/10");
         mFriendCigarTotalCount.setText("300");
-        mFriendCigarDayCount.setText("10");
+        mFriendCigarDayCount.setText("120");
 
     }
 
