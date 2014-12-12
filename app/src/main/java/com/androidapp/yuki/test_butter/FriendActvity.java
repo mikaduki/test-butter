@@ -8,6 +8,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
+import com.microsoft.windowsazure.mobileservices.ServiceFilterResponse;
+import com.microsoft.windowsazure.mobileservices.TableOperationCallback;
+
+import java.net.MalformedURLException;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
@@ -35,6 +41,7 @@ public class FriendActvity extends Activity {
     TextView mFriendCigarDayCount;
     @InjectView(R.id.friend_cigar_total_count)
     TextView mFriendCigarTotalCount;
+    private MobileServiceClient mClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,21 +60,96 @@ public class FriendActvity extends Activity {
     @OnClick(R.id.m1_button)
     public void M1_Button() {
         // TODO submit data to server...
+        try {
+            mClient = new MobileServiceClient("https://myservice.azure-mobile.net/",
+                    "slkerjasfi234eSomePrivateKey", this);
 
+            FbMessages fbmessage = new FbMessages();
+            fbmessage.Message = "いいね！";
+            fbmessage.Read = false;
+            fbmessage.FromFbId = "";
+            fbmessage.ToFbId = "";
+            mClient.getTable(FbMessages.class).insert(fbmessage,
+                    new TableOperationCallback<FbMessages>() {
+                        public void onCompleted(FbMessages entity,
+                                                Exception exception,
+                                                ServiceFilterResponse response) {
+                            if (exception == null) {
+                                //Successful
+                            } else {
+                                //Failed
+                            }
+                        }
+                    });
+
+        } catch (MalformedURLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
     //ダメね
     @OnClick(R.id.m2_button)
     public void M2_Button() {
         // TODO submit data to server...
+        try {
+            mClient = new MobileServiceClient("https://myservice.azure-mobile.net/",
+                    "slkerjasfi234eSomePrivateKey", this);
 
+            FbMessages fbmessage = new FbMessages();
+            fbmessage.Message = "ダメね。";
+            fbmessage.Read = false;
+            fbmessage.FromFbId = "";
+            fbmessage.ToFbId = "";
+            mClient.getTable(FbMessages.class).insert(fbmessage,
+                    new TableOperationCallback<FbMessages>() {
+                        public void onCompleted(FbMessages entity,
+                                                Exception exception,
+                                                ServiceFilterResponse response) {
+                            if (exception == null) {
+                                //Successful
+                            } else {
+                                //Failed
+                            }
+                        }
+                    });
+
+        } catch (MalformedURLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
     //最低！
     @OnClick(R.id.m3_button)
     public void M3_Button() {
         // TODO submit data to server...
+        try {
+            mClient = new MobileServiceClient("https://myservice.azure-mobile.net/",
+                    "slkerjasfi234eSomePrivateKey", this);
 
+            FbMessages fbmessage = new FbMessages();
+            fbmessage.Message = "最低!!";
+            fbmessage.Read = false;
+            fbmessage.FromFbId = "";
+            fbmessage.ToFbId = "";
+            mClient.getTable(FbMessages.class).insert(fbmessage,
+                    new TableOperationCallback<FbMessages>() {
+                        public void onCompleted(FbMessages entity,
+                                                Exception exception,
+                                                ServiceFilterResponse response) {
+                            if (exception == null) {
+                                //Successful
+                            } else {
+                                //Failed
+                            }
+                        }
+                    });
+
+        } catch (MalformedURLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
     @Override

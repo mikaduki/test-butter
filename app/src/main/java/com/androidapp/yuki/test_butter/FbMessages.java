@@ -7,8 +7,12 @@ public class FbMessages {
 
     public String Id;
 
-    public String FbId;
+    public String FromFbId;
+
+    public String ToFbId;
 
     public String Message;
+
+    public boolean Read;
 
 }
