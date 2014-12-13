@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,19 +27,24 @@ import butterknife.OnItemClick;
 public class MainActivity extends Activity {
     @InjectView(R.id.friend_list)
     ListView mFriendList;
+    @InjectView(R.id.messageButton)
+    Button mMessageButton;
+
     ArrayList<User> users;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
+        ButterKnife.inject(this);
 
 
         //ListView setup
         users = new ArrayList<User>();
 
-        User u1 = new User();
+   /*     User u1 = new User();
         u1.name = "YUJI";
         u1.cigarCount = "20";
         users.add(u1);
@@ -46,8 +52,9 @@ public class MainActivity extends Activity {
         User u2 = new User();
         u2.name = "Haru";
         u2.cigarCount = "21";
-        users.add(u2);
+        users.add(u2);*/
 
+        //set ListAdapter
         TestListAdapter testListAdapter = new TestListAdapter(this, R.layout.item, users);
         mFriendList.setAdapter(testListAdapter);
     }
@@ -75,25 +82,20 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-
+    //Friends list onclick event.
     @OnItemClick(R.id.friend_list)
     public void friendClick(int position) {
         User user = (User) mFriendList.getItemAtPosition(position);
-        Intent intent = new Intent(this, FriendActvity.class);
+        Intent intent = new Intent(this, FriendActivity.class);
         startActivity(intent);
         Toast.makeText(this, user.name, Toast.LENGTH_SHORT).show();
-        //ChangeShow();
+
     }
 
-
-    /*private void ChangeShow() {
-        Intent intent = new Intent(this, FriendActvity.class);
-        startActivity(intent);
-    }*/
     public class User {
-        public Drawable icon;
-        public String name;
-        public String cigarCount;
+        private Drawable icon;
+        private String name;
+        private String cigarCount;
     }
 
     public static class TestListAdapter extends ArrayAdapter<User> {
@@ -119,7 +121,6 @@ public class MainActivity extends Activity {
             }
 
             User item = this.getItem(position);
-
 //            holder.mIcon.setImageDrawable(item.icon);
             holder.mName.setText(item.name);
             holder.mCigarCount.setText(item.cigarCount);
@@ -141,7 +142,5 @@ public class MainActivity extends Activity {
                 ButterKnife.inject(this, view);
             }
         }
-
-
     }
 }

@@ -42,8 +42,8 @@ public class RankingActivity extends Activity {
         rank.add(ru1);
 
         RankingUser ru2 = new RankingUser();
-        ru2.rankusername = "Haru";
-        ru2.rankscore = "+21";
+        ru2.rankusername = ""; //User Name
+        ru2.rankscore = ""; //Day Count - Goal Count.
         rank.add(ru2);
 
         RankListAdapter rankListAdapter = new RankListAdapter(this, R.layout.ranking_item, rank);
@@ -53,9 +53,9 @@ public class RankingActivity extends Activity {
 
     //Ranking Item
     public class RankingUser {
-        public Drawable userImageView;
-        public String rankusername;
-        public String rankscore;
+        private Drawable userImageView;
+        private String rankusername;
+        private String rankscore;
     }
 
     //Adapter of Ranking ListView

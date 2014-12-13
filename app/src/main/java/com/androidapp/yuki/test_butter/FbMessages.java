@@ -15,4 +15,6 @@ public class FbMessages {
 
     public boolean Read;
 
+    public String Text;
+
 }

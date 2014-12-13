@@ -14,8 +14,8 @@
         android:layout_height="340dp"
         android:id="@+id/friend_image"
         android:src="@drawable/ic_launcher"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/imageView" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -50,15 +50,15 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ダメね"
+        android:text="がんばれ！"
         android:id="@+id/m2_button"
-        android:layout_alignTop="@+id/m1_button"
+        android:layout_above="@+id/imageView"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="最低"
+        android:text="ダメね。"
         android:id="@+id/m3_button"
         android:layout_alignTop="@+id/m2_button"
         android:layout_alignEnd="@+id/friend_name"
@@ -90,6 +90,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="200"
         android:id="@+id/friend_cigar_total_count"
+        android:layout_marginTop="40dp"
         android:layout_below="@+id/friend_birthday"
-        android:layout_toEndOf="@+id/friend_image" />
+        android:layout_alignStart="@+id/friend_birthday" />
 </RelativeLayout>

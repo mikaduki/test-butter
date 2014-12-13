@@ -89,4 +89,15 @@
         android:layout_alignBottom="@+id/birthday"
         android:layout_alignEnd="@+id/friend_name" />
 
+    <Button
+        android:layout_width="200dp"
+        android:textSize="14dp"
+        android:layout_height="match_parent"
+        android:text="新着メッセージがあります。"
+        android:id="@+id/messageButton"
+        android:layout_above="@+id/mainimageView"
+        android:layout_below="@+id/birthday"
+        android:layout_alignStart="@+id/birthday"
+        android:layout_alignEnd="@+id/gender" />
+
 </RelativeLayout>
